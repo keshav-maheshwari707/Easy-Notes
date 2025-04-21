@@ -1,0 +1,247 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #c3ec52, #0ba29d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+    transition: background 0.3s ease;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    width: 60%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Header */
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 34px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+h1 img {
+    width: 42px;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 14px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(106, 17, 203, 0.4);
+}
+
+button img {
+    width: 20px;
+    /* padding-top: -1px; */
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(106, 17, 203, 0.6);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+/* Search Bar */
+#search {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: white;
+    color: black;
+    transition: box-shadow 0.3s ease;
+}
+
+#search:focus {
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.2);
+}
+
+/* Notes Container */
+.notes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+/* Note Box */
+.input-box {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.4s ease;
+    position: relative;
+}
+
+.input-box:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+/* Editable Content */
+.note-content {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    min-height: 40px;
+    padding: 4px;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* Date Display */
+.note-date {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+    pointer-events: none;
+}
+
+/* Delete Icon */
+.input-box img {
+    align-self: flex-end;
+    width: 20px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.input-box img:hover {
+    transform: scale(1.1) rotate(10deg);
+    opacity: 1;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #0f0f0f;
+    color: white;
+}
+
+.dark-mode .container {
+    background: rgba(50, 50, 50, 0.5);
+    backdrop-filter: blur(15px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode h1 {
+    color: white;
+}
+
+.dark-mode #search::placeholder {
+    color: white;
+}
+
+.dark-mode .note-date {
+    color: white;
+}
+
+.dark-mode .input-box img {
+    opacity: 1;
+    filter: brightness(0) invert(1);
+}
+
+.dark-mode .input-box {
+    background: rgba(80, 80, 80, 0.6);
+    color: white;
+}
+
+.dark-mode .note-content {
+    color: white;
+}
+
+.dark-mode #search {
+    background: #333;
+    color: white;
+    border: 1px solid #777;
+}
+
+/* Toolbar Styling */
+.toolbar {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.toolbar button {
+    background: #6a0dad;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.toolbar button:hover {
+    background-color: #5a0a9b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#deleteAll {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+/* Pin Icon */
+.pin-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.pin-icon.pinned {
+    opacity: 1;
+    transform: rotate(-20deg);
+}
+
+.pin-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}

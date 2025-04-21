@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/notes.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="assets/notes.png" alt="notes">Easy Notes</h1>
+        <button class="btn"> <img src="assets/edit.png" alt="create notes"> Create notes</button>
+        <input type="text" id="search" placeholder="Search Notes">
+        <button id="toggleDarkMode">Toggle Dark Mode</button>
+        <div class="notes-container"></div>
+        <br>
+        <button id="saveToFile">Save Notes to File</button>
+        <button id="saveToPDF">Save as PDF</button>
+        <button id="deleteAll">Delete All Notes</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
